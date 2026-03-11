@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurabell – Beauty that feels like you.</title>
+  <meta name="description"
+    content="Aurabell is a modern beauty brand that celebrates individuality and confidence. Clean, conscious, confident cosmetics – paraben-free, cruelty-free, 100% vegan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">✦</span> Aurabell
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link" onclick="closeMenu()">Home</a></li>
+        <li><a href="#products" class="nav-link" onclick="closeMenu()">Products</a></li>
+        <li><a href="#about" class="nav-link" onclick="closeMenu()">About</a></li>
+        <li><a href="#login-section" class="nav-link" onclick="closeMenu()" id="loginNavLink">Login</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- User greeting (shown when logged in) -->
+        <div class="user-greeting" id="userGreeting" style="display:none;">
+          <span class="greeting-text" id="greetingText"></span>
+          <button class="btn-logout" id="logoutBtn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Cart icon -->
+        <button class="cart-btn" id="cartBtn" onclick="toggleCart()" aria-label="Shopping cart">
+          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+      <div class="hero-blob blob-3"></div>
+      <div class="hero-petals">
+        <span class="petal p1">✿</span>
+        <span class="petal p2">✾</span>
+        <span class="petal p3">✿</span>
+        <span class="petal p4">✾</span>
+        <span class="petal p5">✿</span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-tagline animate-fade-up delay-1">Where your aura finds its glow.</p>
+      <h1 class="hero-headline animate-fade-up delay-2">Beauty that<br /><em>feels like you.</em></h1>
+      <p class="hero-subheadline animate-fade-up delay-3">Clean.&ensp;Conscious.&ensp;Confident.</p>
+
+      <div class="hero-badges animate-fade-up delay-4">
+        <span class="badge">✦ Paraben-Free</span>
+        <span class="badge">✦ Cruelty-Free</span>
+        <span class="badge">✦ 100% Vegan</span>
+      </div>
+
+      <div class="hero-btns animate-fade-up delay-5">
+        <a href="#products" class="btn btn-primary" id="heroLipTint">Shop Lip Tint</a>
+        <a href="#products" class="btn btn-outline" id="heroEyeliner">Shop Eyeliner</a>
+      </div>
+    </div>
+
+    <div class="hero-visual animate-fade-right delay-3">
+      <div class="hero-image-frame">
+        <img src="images/lip-tint.jpg" alt="Aurabell Lip Tint – Rosewood Blush" class="hero-product-img" />
+        <div class="hero-image-glow"></div>
+      </div>
+      <div class="hero-floating-tag tag-1">
+        <span>✦</span> New Arrival
+      </div>
+      <div class="hero-floating-tag tag-2">
+        <span>♡</span> Bestseller
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-image-wrap">
+            <img src="images/eyeliner.png" alt="Aurabell Liquid Eyeliner – Precision Black" class="about-img" />
+            <div class="about-accent-ring"></div>
+          </div>
+          <div class="about-stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Natural Ingredients</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-title">More than makeup.<br /><em>A movement.</em></h2>
+          <p class="about-text">
+            Aurabell is a modern beauty brand that celebrates individuality and confidence.
+            We believe makeup should enhance your aura, not hide it — crafted for every skin tone,
+            every story, every glow.
+          </p>
+
+          <div class="about-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">🌿</div>
+              <div>
+                <strong>Paraben-Free</strong>
+                <p>No harsh preservatives, ever.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🐰</div>
+              <div>
+                <strong>Cruelty-Free</strong>
+                <p>Certified compassionate beauty.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🔬</div>
+              <div>
+                <strong>Dermatologically Tested</strong>
+                <p>Safe for all skin types.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🌱</div>
+              <div>
+                <strong>100% Vegan</strong>
+                <p>Pure plant-powered formulas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTS SECTION ==================== -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Curated For You</p>
+        <h2 class="section-title">Our Signature<br /><em>Collection</em></h2>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Product Card 1: Lip Tint -->
+        <div class="product-card" id="productLipTint">
+          <div class="product-image-wrap">
+            <img src="images/lip-tint.jpg" alt="Aurabell Lip Tint – Rosewood Blush" class="product-img" />
+            <div class="product-badge-new">New</div>
+            <div class="product-overlay">
+              <button class="btn btn-primary btn-full" onclick="addToCart('Aurabell Lip Tint', 16.99)"
+                id="addLipTintBtn">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Aurabell Lip Tint</h3>
+            <p class="product-description">
+              A lightweight tint that melts into your lips for a natural glowing flush.
+            </p>
+            <div class="product-features">
+              <span class="feature-tag">✓ Long-lasting tint</span>
+              <span class="feature-tag">✓ Non-sticky</span>
+              <span class="feature-tag">✓ Natural glow</span>
+              <span class="feature-tag">✓ Lip &amp; cheek friendly</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$16.99</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('Aurabell Lip Tint', 16.99)"
+                id="addLipTintBtnBottom">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2: Liquid Eyeliner -->
+        <div class="product-card" id="productEyeliner">
+          <div class="product-image-wrap">
+            <img src="images/eyeliner.png" alt="Aurabell Liquid Eyeliner – Ultra Black" class="product-img" />
+            <div class="product-badge-new" style="background: #2d2d2d; color: #f5e6d3;">Hot</div>
+            <div class="product-overlay">
+              <button class="btn btn-primary btn-full" onclick="addToCart('Aurabell Liquid Eyeliner', 14.99)"
+                id="addEyelinerBtn">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Aurabell Liquid Eyeliner</h3>
+            <p class="product-description">
+              A highly pigmented precision eyeliner for sharp definition and long-lasting wear.
+            </p>
+            <div class="product-features">
+              <span class="feature-tag">✓ Smudge-resistant</span>
+              <span class="feature-tag">✓ Deep pigment</span>
+              <span class="feature-tag">✓ Precision tip</span>
+              <span class="feature-tag">✓ Long-lasting wear</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$14.99</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('Aurabell Liquid Eyeliner', 14.99)"
+                id="addEyelinerBtnBottom">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOGIN / SIGNUP SECTION ==================== -->
+  <section class="auth-section" id="login-section">
+    <div class="container">
+      <div class="auth-wrapper">
+
+        <!-- Login Form -->
+        <div class="auth-card" id="loginCard">
+          <div class="auth-header">
+            <p class="section-eyebrow">Welcome Back</p>
+            <h2 class="auth-title">Sign In</h2>
+          </div>
+          <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+              <label for="loginEmail">Email Address</label>
+              <input type="email" id="loginEmail" placeholder="you@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <div class="input-password-wrap">
+                <input type="password" id="loginPassword" placeholder="••••••••" required
+                  autocomplete="current-password" />
+                <button type="button" class="toggle-pw" onclick="togglePassword('loginPassword', this)"
+                  aria-label="Show password">👁</button>
+              </div>
+            </div>
+            <p class="form-error" id="loginError"></p>
+            <button type="submit" class="btn btn-primary btn-full" id="loginSubmitBtn">Sign In</button>
+          </form>
+          <p class="auth-switch">Don't have an account? <button onclick="switchToSignup()" id="switchToSignupBtn">Sign
+              Up</button></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="auth-card" id="signupCard" style="display:none;">
+          <div class="auth-header">
+            <p class="section-eyebrow">Join Aurabell</p>
+            <h2 class="auth-title">Create Account</h2>
+          </div>
+          <form id="signupForm" onsubmit="handleSignup(event)">
+            <div class="form-group">
+              <label for="signupName">Full Name</label>
+              <input type="text" id="signupName" placeholder="Your Name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="signupEmail">Email Address</label>
+              <input type="email" id="signupEmail" placeholder="you@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <div class="input-password-wrap">
+                <input type="password" id="signupPassword" placeholder="Min. 6 characters" required
+                  autocomplete="new-password" minlength="6" />
+                <button type="button" class="toggle-pw" onclick="togglePassword('signupPassword', this)"
+                  aria-label="Show password">👁</button>
+              </div>
+            </div>
+            <p class="form-error" id="signupError"></p>
+            <button type="submit" class="btn btn-primary btn-full" id="signupSubmitBtn">Create Account</button>
+          </form>
+          <p class="auth-switch">Already have an account? <button onclick="switchToLogin()" id="switchToLoginBtn">Sign
+              In</button></p>
+        </div>
+
+        <!-- Logged-in State -->
+        <div class="auth-card logged-in-card" id="loggedInCard" style="display:none;">
+          <div class="logged-in-icon">✦</div>
+          <h2 class="auth-title" id="loggedInTitle">Welcome back!</h2>
+          <p class="logged-in-sub">You're signed in to your Aurabell account.</p>
+          <button class="btn btn-outline btn-full" onclick="logout()" id="logoutCardBtn">Sign Out</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo">
+            <span class="logo-icon">✦</span> Aurabell
+          </a>
+          <p class="footer-tagline">Where your aura finds its glow.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="social-link">IG</a>
+            <a href="#" aria-label="TikTok" class="social-link">TK</a>
+            <a href="#" aria-label="Pinterest" class="social-link">PT</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Be the first to know about new drops and exclusive offers.</p>
+          <div class="newsletter-form">
+            <input type="email" id="newsletterEmail" placeholder="Enter your email" />
+            <button class="btn btn-primary">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Aurabell. All rights reserved. &nbsp;|&nbsp; Clean Beauty for Everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CART SIDEBAR ==================== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button onclick="toggleCart()" class="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛍</div>
+        <p>Your cart is empty.</p>
+        <a href="#products" onclick="toggleCart()" class="btn btn-primary btn-sm">Shop Now</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="checkout()" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==================== CHECKOUT MODAL ==================== -->
+  <div class="modal-overlay" id="checkoutModalOverlay" onclick="closeCheckoutModal()"></div>
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeCheckoutModal()" aria-label="Close modal">✕</button>
+    <div class="modal-icon">🛍</div>
+    <h2 class="modal-title" id="modalTitle">We'll Be Right Back!</h2>
+    <p class="modal-message">
+      We're sorry, currently we are not taking online orders.<br />Please check back soon — something beautiful is on
+      its way! ✨
+    </p>
+    <button class="btn btn-primary" onclick="closeCheckoutModal()" id="modalCloseBtn">Got It</button>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
